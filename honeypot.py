@@ -31,7 +31,6 @@ class SSHServer(paramiko.ServerInterface):
 
     def get_client(self):
         transport = paramiko.Transport(self.event)
-        transport.local_version = 'OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)'
         transport.start_client()
         client = transport.remote_version
         transport.close()
