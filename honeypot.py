@@ -45,7 +45,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
         
         transport.add_server_key(ssh_server.host_key)
         
-        transport.local_version = 'SSH-2.0-OpenSSH_8.9p1 Debian 3ubuntu0.1'
+        transport.local_version = 'SSH-2.0-OpenSSH_9.2p1 Debian-2'
         
         transport.start_server(server=ssh_server)
         
