@@ -18,7 +18,7 @@ class SSHServer(paramiko.ServerInterface):
         username_password = open('Data-Collection/credentials.txt', 'a')
         username_password.write(f'Protocol : SSH , Host : {client_ip} , UserName : {username} , Password : {password}\n')
         if username == 'Honey' and password == 'LOUOFD#$%^XSW0()$#@!':
-            return paramiko.AUTH_SUCCESSFUL
+            return paramiko.AUTH_FAILED
         else:
             return paramiko.AUTH_FAILED
         return paramiko.AUTH_FAILED
