@@ -1,5 +1,4 @@
 import paramiko
-import socket
 import threading
 import socketserver
 print("#!------------Starting The Honeypot-----------#!")
