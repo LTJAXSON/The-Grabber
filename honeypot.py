@@ -2,6 +2,7 @@ import paramiko
 import threading
 import socketserver
 print("#!------------Starting The Honeypot-----------#!")
+print("#!------------Serving on Port 2222------------#!")
 print("#!------------Note: Even if you see's an erorr dont worry it will still work-----------#!")
 class SSHServer(paramiko.ServerInterface):
     def __init__(self):
@@ -16,6 +17,7 @@ class SSHServer(paramiko.ServerInterface):
     def check_auth_password(self, username, password):
         username_password = open('Data-Collection/credentials.txt', 'a')
         username_password.write(f'Protocol : SSH , Host : {client_ip} , UserName : {username} , Password : {password}\n')
+        print("[*] User Login Logged!")
         if username == 'Honey' and password == 'LOUOFD#$%^XSW0()$#@!':
             return paramiko.AUTH_FAILED
         else:
